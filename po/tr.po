@@ -1,0 +1,153 @@
+# Turkish translation for Glass Dock.
+msgid ""
+msgstr ""
+"Project-Id-Version: Glass Dock\n"
+"PO-Revision-Date: 2026-09-30 15:00+0300\n"
+"Last-Translator: Umut Öztürk\n"
+"Language-Team: Turkish\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+
+#: prefs.js:34
+msgid "Appearance"
+msgstr "Görünüm"
+
+#: prefs.js:38
+msgid "Icon size"
+msgstr "Simge boyutu"
+
+#: prefs.js:45
+msgid "Magnification"
+msgstr "Büyütme"
+
+#: prefs.js:46
+msgid "How large icons grow under the pointer"
+msgstr "İmlecin altındaki simgeler ne kadar büyüsün"
+
+#: prefs.js:57
+msgid "Off"
+msgstr "Kapalı"
+
+#: prefs.js:59
+msgid "Large"
+msgstr "Büyük"
+
+#: prefs.js:64
+msgid "Frosted glass"
+msgstr "Buzlu cam"
+
+#: prefs.js:65
+msgid "Turn off for a plain dark dock on slower graphics"
+msgstr "Yavaş ekran kartlarında düz koyu dock için kapatın"
+
+#: prefs.js:70
+msgid "Primary monitor"
+msgstr "Ana monitör"
+
+#: prefs.js:73 prefs.js:75
+msgid "Monitor"
+msgstr "Monitör"
+
+#: prefs.js:83
+msgid "Behaviour"
+msgstr "Davranış"
+
+#: prefs.js:86
+msgid "Slide out of the way"
+msgstr "Yoldan çekil"
+
+#: prefs.js:87
+msgid "Rest the pointer on the bottom edge to bring it back"
+msgstr "Geri getirmek için imleci alt kenarda bekletin"
+
+#: prefs.js:89
+msgid "Never"
+msgstr "Hiçbir zaman"
+
+#: prefs.js:90
+msgid "In fullscreen"
+msgstr "Tam ekranda"
+
+#: prefs.js:91
+msgid "When a window reaches under it"
+msgstr "Bir pencere altına girince"
+
+#: prefs.js:98
+msgid "Click the active app to minimize it"
+msgstr "Etkin uygulamaya tıklayınca küçült"
+
+#: prefs.js:101
+msgid "Dock"
+msgstr "Dock"
+
+#: prefs.js:101
+msgid "What the dock shows"
+msgstr "Dock'ta neler görünsün"
+
+#: prefs.js:103
+msgid "Show Apps button"
+msgstr "Uygulamaları Göster düğmesi"
+
+#: prefs.js:104
+msgid "Open apps that are not pinned"
+msgstr "Sabitlenmemiş açık uygulamalar"
+
+#: prefs.js:105 icons.js:378
+msgid "Trash"
+msgstr "Çöp Kutusu"
+
+#: prefs.js:106
+msgid "Badges and progress"
+msgstr "Rozetler ve ilerleme"
+
+#: prefs.js:107
+msgid "Unread counts and download progress that apps report"
+msgstr "Uygulamaların bildirdiği okunmamış sayıları ve indirme ilerlemesi"
+
+#: prefs.js:118
+msgid "Compatibility"
+msgstr "Uyumluluk"
+
+#: prefs.js:125
+msgid "Another dock is on. Turn it off so the two do not overlap."
+msgstr "Başka bir dock açık. İkisi üst üste binmesin diye onu kapatın."
+
+#: prefs.js:126
+msgid "Turn off its dash blur; this dock has its own glass."
+msgstr "Dash bulanıklığını kapatın; bu dock'un kendi camı var."
+
+#: prefs.js:134
+msgid "About"
+msgstr "Hakkında"
+
+#: prefs.js:138
+msgid "Report a problem or suggest an idea"
+msgstr "Sorun bildir ya da fikir öner"
+
+#: icons.js:317
+msgid "New Window"
+msgstr "Yeni Pencere"
+
+#: icons.js:333
+msgid "Remove from Dock"
+msgstr "Dock'tan Kaldır"
+
+#: icons.js:335
+msgid "Keep in Dock"
+msgstr "Dock'ta Tut"
+
+#: icons.js:338
+msgid "Quit All Windows"
+msgstr "Tüm Pencereleri Kapat"
+
+#: icons.js:338
+msgid "Quit"
+msgstr "Çık"
+
+#: icons.js:354
+msgid "Show Apps"
+msgstr "Uygulamaları Göster"

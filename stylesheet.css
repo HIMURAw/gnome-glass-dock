@@ -1,0 +1,87 @@
+/* Dark frosted glass, the same as Dynamic Island. The blur comes from glass.js;
+   these rules add the tint over it, a faint hairline and the details. */
+
+.gdock-glass-tint {
+  background-color: rgba(22, 22, 26, 0.5);
+}
+
+.gdock-glass-solid {
+  background-color: rgba(28, 28, 32, 0.96);
+}
+
+.gdock-glass {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.gdock-item {
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+/* Open windows, under each icon. The active app's dot is wider and brighter. */
+.gdock-dots {
+  spacing: 3px;
+}
+
+.gdock-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: rgba(245, 245, 247, 0.55);
+}
+
+.gdock-dot-focused {
+  width: 10px;
+  background-color: #f5f5f7;
+}
+
+.gdock-badge {
+  color: #ffffff;
+  background-color: #ff453a;
+  border-radius: 99px;
+  padding: 1px 6px;
+  font-weight: bold;
+  font-feature-settings: "tnum";
+  min-width: 1em;
+  text-align: center;
+}
+
+.gdock-progress {
+  background-color: rgba(0, 0, 0, 0.45);
+  border-radius: 99px;
+}
+
+.gdock-progress-fill {
+  background-color: #f5f5f7;
+  border-radius: 99px;
+}
+
+.gdock-separator {
+  background-color: rgba(255, 255, 255, 0.18);
+}
+
+.gdock-show-apps-tile {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #f5f5f7;
+}
+
+/* The app's name above its icon. */
+.gdock-label {
+  color: #f5f5f7;
+  background-color: rgba(28, 28, 32, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 99px;
+  padding: 5px 12px;
+  font-size: 10pt;
+}
+
+/* Menus */
+.gdock-menu-title {
+  font-weight: bold;
+}
+
+.popup-menu .gdock-glass-menu .popup-menu-item:hover,
+.popup-menu .gdock-glass-menu .popup-menu-item:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+}

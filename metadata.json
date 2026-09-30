@@ -1,0 +1,10 @@
+{
+  "uuid": "glass-dock@himuraw",
+  "name": "Glass Dock",
+  "description": "A frosted-glass dock with macOS-style magnification.\n\nIcons grow under the pointer, launching apps bounce, dots show open windows, and badges and progress bars show what apps report. Drag to pin and reorder, right-click for windows and actions, scroll to switch windows. It slides out of the way in fullscreen or when a window reaches under it. Pairs with Dynamic Island.",
+  "shell-version": ["50"],
+  "url": "https://github.com/HIMURAw/gnome-glass-dock",
+  "settings-schema": "org.gnome.shell.extensions.glass-dock",
+  "gettext-domain": "glass-dock@himuraw",
+  "version-name": "1.0"
+}
