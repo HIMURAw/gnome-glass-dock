@@ -1,0 +1,158 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the Glass Dock package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Glass Dock\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-30 14:46+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: prefs.js:34
+msgid "Appearance"
+msgstr ""
+
+#: prefs.js:38
+msgid "Icon size"
+msgstr ""
+
+#: prefs.js:45
+msgid "Magnification"
+msgstr ""
+
+#: prefs.js:46
+msgid "How large icons grow under the pointer"
+msgstr ""
+
+#: prefs.js:57
+msgid "Off"
+msgstr ""
+
+#: prefs.js:59
+msgid "Large"
+msgstr ""
+
+#: prefs.js:64
+msgid "Frosted glass"
+msgstr ""
+
+#: prefs.js:65
+msgid "Turn off for a plain dark dock on slower graphics"
+msgstr ""
+
+#: prefs.js:70
+msgid "Primary monitor"
+msgstr ""
+
+#: prefs.js:73 prefs.js:75
+msgid "Monitor"
+msgstr ""
+
+#: prefs.js:83
+msgid "Behaviour"
+msgstr ""
+
+#: prefs.js:86
+msgid "Slide out of the way"
+msgstr ""
+
+#: prefs.js:87
+msgid "Rest the pointer on the bottom edge to bring it back"
+msgstr ""
+
+#: prefs.js:89
+msgid "Never"
+msgstr ""
+
+#: prefs.js:90
+msgid "In fullscreen"
+msgstr ""
+
+#: prefs.js:91
+msgid "When a window reaches under it"
+msgstr ""
+
+#: prefs.js:98
+msgid "Click the active app to minimize it"
+msgstr ""
+
+#: prefs.js:101
+msgid "Dock"
+msgstr ""
+
+#: prefs.js:101
+msgid "What the dock shows"
+msgstr ""
+
+#: prefs.js:103
+msgid "Show Apps button"
+msgstr ""
+
+#: prefs.js:104
+msgid "Open apps that are not pinned"
+msgstr ""
+
+#: prefs.js:105 icons.js:378
+msgid "Trash"
+msgstr ""
+
+#: prefs.js:106
+msgid "Badges and progress"
+msgstr ""
+
+#: prefs.js:107
+msgid "Unread counts and download progress that apps report"
+msgstr ""
+
+#: prefs.js:118
+msgid "Compatibility"
+msgstr ""
+
+#: prefs.js:125
+msgid "Another dock is on. Turn it off so the two do not overlap."
+msgstr ""
+
+#: prefs.js:126
+msgid "Turn off its dash blur; this dock has its own glass."
+msgstr ""
+
+#: prefs.js:134
+msgid "About"
+msgstr ""
+
+#: prefs.js:138
+msgid "Report a problem or suggest an idea"
+msgstr ""
+
+#: icons.js:317
+msgid "New Window"
+msgstr ""
+
+#: icons.js:333
+msgid "Remove from Dock"
+msgstr ""
+
+#: icons.js:335
+msgid "Keep in Dock"
+msgstr ""
+
+#: icons.js:338
+msgid "Quit All Windows"
+msgstr ""
+
+#: icons.js:338
+msgid "Quit"
+msgstr ""
+
+#: icons.js:354
+msgid "Show Apps"
+msgstr ""

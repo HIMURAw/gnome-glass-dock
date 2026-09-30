@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="glass-dock@himuraw">
+  <enum id="org.gnome.shell.extensions.glass-dock.AutoHide">
+    <value nick="never" value="0"/>
+    <value nick="fullscreen" value="1"/>
+    <value nick="smart" value="2"/>
+  </enum>
+
+  <schema id="org.gnome.shell.extensions.glass-dock"
+          path="/org/gnome/shell/extensions/glass-dock/">
+    <key name="icon-size" type="i">
+      <range min="32" max="80"/>
+      <default>48</default>
+      <summary>Icon size</summary>
+    </key>
+    <key name="magnification" type="d">
+      <range min="1.0" max="2.2"/>
+      <default>1.6</default>
+      <summary>Magnification</summary>
+      <description>How large icons grow under the pointer; 1 turns magnification off.</description>
+    </key>
+    <key name="auto-hide" enum="org.gnome.shell.extensions.glass-dock.AutoHide">
+      <default>'smart'</default>
+      <summary>When the dock slides out of the way</summary>
+      <description>never: always shown, windows stay above it. fullscreen: hidden while a window is fullscreen. smart: also hidden while a window reaches down under it.</description>
+    </key>
+    <key name="blur" type="b">
+      <default>true</default>
+      <summary>Frosted glass</summary>
+    </key>
+    <key name="monitor" type="i">
+      <default>-1</default>
+      <summary>Monitor</summary>
+      <description>Index of the monitor the dock sits on, or -1 for the primary monitor.</description>
+    </key>
+    <key name="show-apps-button" type="b">
+      <default>true</default>
+      <summary>Show Apps button</summary>
+    </key>
+    <key name="show-running" type="b">
+      <default>true</default>
+      <summary>Running apps that are not pinned</summary>
+    </key>
+    <key name="show-trash" type="b">
+      <default>true</default>
+      <summary>Trash</summary>
+    </key>
+    <key name="show-badges" type="b">
+      <default>true</default>
+      <summary>Badges and progress</summary>
+      <description>Unread counts and progress bars that apps publish.</description>
+    </key>
+    <key name="click-minimizes" type="b">
+      <default>true</default>
+      <summary>Clicking the active app minimizes it</summary>
+    </key>
+  </schema>
+</schemalist>
