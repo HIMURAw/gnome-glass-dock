@@ -241,13 +241,16 @@ export class Dock {
         const wanted = new Set(desired.map(([key]) => key));
         const next = [];
         for (const [key, create] of desired) {
-            let item = this._keyed.get(key);
+            // An icon still shrinking away grows back instead of being left
+            // behind, still connected, next to a new one.
+            let item = this._keyed.get(key) ??
+                this._items.find(o => o.key === key && !o.removed && o !== this._placeholder);
             if (!item || item.removed) {
                 item = create();
                 item.key = key;
-                this._keyed.set(key, item);
                 this.row.add_child(item.actor);
             }
+            this._keyed.set(key, item);
             item.targetPresence = 1;
             next.push(item);
         }
