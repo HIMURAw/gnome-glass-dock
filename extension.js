@@ -239,6 +239,7 @@ export default class GlassDockExtension extends Extension {
     }
 
     _releaseAutoHide() {
+        this._keepComposited(false);
         for (const [window, ids] of this._windowIds ?? [])
             ids.forEach(id => window.disconnect(id));
         this._windowIds?.clear();
@@ -306,6 +307,10 @@ export default class GlassDockExtension extends Extension {
     _setAutoHide(on, fullscreen = false) {
         const wasFullscreen = this._fullscreen;
         this._fullscreen = fullscreen;
+        if (!fullscreen)
+            this._keepComposited(false);
+        else if (!this._hidden)
+            this._keepComposited(true);
         if (on && !this._pointerWatch)
             this._pointerWatch = getPointerWatcher().addWatch(100, (x, y) => this._onPointerMove(x, y));
         else if (!on && this._pointerWatch) {
@@ -374,6 +379,11 @@ export default class GlassDockExtension extends Extension {
         this._hidden = hidden;
         // A showing spring still running would pull the dock back up.
         stopSpring(this._container);
+        // A fullscreen window (a video, Zen in F11) is scanned out straight to the
+        // screen, past the shell: the dock drawn over it showed only now and then
+        // (whenever something forced a composited frame) and seemed to flicker. While
+        // it shows over one, keep the compositor in the way, as the island does.
+        this._keepComposited(!hidden && !!this._fullscreen);
         const offset = this._dockHeight + 6;
         if (hidden) {
             this._container.ease({
@@ -391,6 +401,16 @@ export default class GlassDockExtension extends Extension {
                 this._container.show();
             spring(this._container, {translation_y: 0}, {response: 0.42, damping: 0.74});
         }
+    }
+
+    _keepComposited(on) {
+        if (on === !!this._unredirectOff)
+            return;
+        this._unredirectOff = on;
+        if (on)
+            global.compositor.disable_unredirect();
+        else
+            global.compositor.enable_unredirect();
     }
 
     // ---------- Desktop icons ----------
