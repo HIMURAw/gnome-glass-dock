@@ -307,10 +307,11 @@ export default class GlassDockExtension extends Extension {
     _setAutoHide(on, fullscreen = false) {
         const wasFullscreen = this._fullscreen;
         this._fullscreen = fullscreen;
-        if (!fullscreen)
-            this._keepComposited(false);
-        else if (!this._hidden)
-            this._keepComposited(true);
+        // Not only in fullscreen: a maximized window that fills the whole screen (Zen
+        // without F11) is scanned out straight to the display as well, and then the
+        // shown dock was not drawn over it (2026-10-13). Keep the compositor in the way
+        // whenever it shows over a window; when nothing is under it, let it go.
+        this._keepComposited(on && !this._hidden);
         if (on && !this._pointerWatch)
             this._pointerWatch = getPointerWatcher().addWatch(100, (x, y) => this._onPointerMove(x, y));
         else if (!on && this._pointerWatch) {
@@ -383,7 +384,7 @@ export default class GlassDockExtension extends Extension {
         // screen, past the shell: the dock drawn over it showed only now and then
         // (whenever something forced a composited frame) and seemed to flicker. While
         // it shows over one, keep the compositor in the way, as the island does.
-        this._keepComposited(!hidden && !!this._fullscreen);
+        this._keepComposited(!hidden && !!this._autoHide);
         const offset = this._dockHeight + 6;
         if (hidden) {
             this._container.ease({
