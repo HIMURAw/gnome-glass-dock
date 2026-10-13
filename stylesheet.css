@@ -1,16 +1,16 @@
-/* Dark frosted glass, the same as Dynamic Island. The blur comes from glass.js;
+/* Dark frosted glass with a faint violet cast, the same as Dynamic Island. The blur comes from glass.js;
    these rules add the tint over it, a faint hairline and the details. */
 
 .gdock-glass-tint {
-  background-color: rgba(22, 22, 26, 0.5);
+  background-color: rgba(27, 22, 44, 0.52);
 }
 
 .gdock-glass-solid {
-  background-color: rgba(28, 28, 32, 0.96);
+  background-color: rgba(32, 27, 48, 0.96);
 }
 
 .gdock-glass {
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(190, 170, 255, 0.14);
 }
 
 .gdock-item {
@@ -33,7 +33,7 @@
 
 .gdock-dot-focused {
   width: 10px;
-  background-color: #f5f5f7;
+  background-color: #c4b5ff;
 }
 
 .gdock-badge {
@@ -69,8 +69,8 @@
 /* The app's name above its icon. */
 .gdock-label {
   color: #f5f5f7;
-  background-color: rgba(28, 28, 32, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: rgba(32, 27, 48, 0.9);
+  border: 1px solid rgba(190, 170, 255, 0.14);
   border-radius: 99px;
   padding: 5px 12px;
   font-size: 10pt;
