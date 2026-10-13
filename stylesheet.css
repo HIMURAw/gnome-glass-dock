@@ -10,7 +10,9 @@
 }
 
 .gdock-glass {
-  border: 1px solid rgba(168, 132, 255, 0.6);
+  /* drawn by glass.js along the rounded edge */
+  border: 1px solid transparent;
+  -glass-frame-color: rgba(168, 132, 255, 0.6);
 }
 
 .gdock-item {
