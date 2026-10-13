@@ -8,7 +8,7 @@ import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 import {getPointerWatcher} from 'resource:///org/gnome/shell/ui/pointerWatcher.js';
 
 import {Dock} from './dock.js';
-import {setBlurEnabled} from './glass.js';
+import {setBlurEnabled, snapshotExclude} from './glass.js';
 import {LauncherEntries} from './launcher.js';
 import {GlassMenus} from './menus.js';
 import {spring, stopAllSprings, stopSpring} from './spring.js';
@@ -110,6 +110,8 @@ export default class GlassDockExtension extends Extension {
 
         this._container = this._dock.actor;
         Main.layoutManager.addChrome(this._container, {affectsStruts: false, trackFullscreen: false});
+        // The dock, icons included, is blanked out of the glass snapshots (glass.js).
+        snapshotExclude.add(this._container);
         // A separate strip reserves the dock's height at the bottom, so windows
         // do not go under it; the dock area itself is taller (magnified icons).
         const mode = this._settings.get_string('auto-hide');
@@ -144,6 +146,7 @@ export default class GlassDockExtension extends Extension {
             Main.layoutManager.removeChrome(this._container);
             this._dock.destroy();
         }
+        snapshotExclude.clear();
         this._dock = this._container = null;
         if (this._strut) {
             if (this._strut.get_parent())
