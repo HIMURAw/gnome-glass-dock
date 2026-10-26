@@ -12,6 +12,7 @@ import {setBlurEnabled, snapshotExclude} from './glass.js';
 import {LauncherEntries} from './launcher.js';
 import {GlassMenus} from './menus.js';
 import {spring, stopAllSprings, stopSpring} from './spring.js';
+import {ThemedStylesheet} from './theme.js';
 
 // Room above the resting dock for the name label (px).
 const LABEL_ROOM = 44;
@@ -26,6 +27,8 @@ const DESKTOP_ICONS_ID = '130cbc66-235c-4bd6-8571-98d2d8bba5e2';
 export default class GlassDockExtension extends Extension {
     enable() {
         this._settings = this.getSettings();
+        // The colour theme (tema-rengi), live: the stylesheet is violet, a recoloured copy is loaded.
+        this._theme = new ThemedStylesheet(this);
         // Any change rebuilds the dock: disable() undoes everything, so building
         // again with the new settings is the simplest safe way.
         this._settingsId = this._settings.connect('changed', () => this._queueRebuild());
@@ -33,6 +36,8 @@ export default class GlassDockExtension extends Extension {
     }
 
     disable() {
+        this._theme?.destroy();
+        this._theme = null;
         if (this._rebuildId)
             GLib.source_remove(this._rebuildId);
         this._rebuildId = 0;
