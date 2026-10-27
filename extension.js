@@ -204,7 +204,13 @@ export default class GlassDockExtension extends Extension {
     _setupOverview() {
         this._connect(Main.overview, 'showing', () => this._setOverview(true));
         this._connect(Main.overview, 'hiding', () => this._setOverview(false));
-        if (Main.overview.visible)
+        // visibleTarget, not visible: a rebuild (monitors-changed) can land while the
+        // overview is still animating out, after 'hiding' has fired. visible is true
+        // then, so the dock took itself for in the overview and stayed hidden for good,
+        // the bottom edge never bringing it back (Umut, 2026-10-27: "mouse'u oraya
+        // götürünce görünmüyor").
+        this._inOverview = false;
+        if (Main.overview.visibleTarget)
             this._setOverview(true);
     }
 
