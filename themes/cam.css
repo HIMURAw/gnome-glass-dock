@@ -1,0 +1,62 @@
+/* cam: the Cam Panel look. Appended (not recoloured) to the stylesheet when the colour theme is
+   cam; glass.js rounds the corners for it. Neutral white frost instead of violet, a pill dock. */
+
+.gdock-glass-tint {
+  background-gradient-direction: vertical;
+  background-gradient-start: rgba(255, 255, 255, 0.15);
+  background-gradient-end: rgba(255, 255, 255, 0.085);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.gdock-glass-solid {
+  background-gradient-direction: none;
+  background-color: rgba(26, 23, 48, 0.92);
+}
+
+.gdock-glass {
+  -glass-frame-color: rgba(255, 255, 255, 0.17);
+  -glass-radius: 999px;
+}
+
+.gdock-dot {
+  background-color: rgba(244, 241, 255, 0.42);
+}
+
+/* The current app: ink, as the Cam Panel's current dock button. */
+.gdock-dot-focused {
+  width: 14px;
+  background-color: #f4f1ff;
+}
+
+.gdock-separator {
+  background-color: rgba(255, 255, 255, 0.17);
+}
+
+.gdock-show-apps-tile {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #f4f1ff;
+}
+
+.gdock-label {
+  color: #f4f1ff;
+  background-color: rgba(18, 15, 36, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.17);
+  border-radius: 8px;
+  padding: 5px 10px;
+}
+
+.popup-menu .gdock-glass-menu .popup-menu-item {
+  border-radius: 999px;
+  color: #f4f1ff;
+}
+
+.popup-menu .gdock-glass-menu .popup-menu-item:hover,
+.popup-menu .gdock-glass-menu .popup-menu-item:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.popup-menu .gdock-glass-menu .popup-menu-item:active,
+.popup-menu .gdock-glass-menu .popup-menu-item:checked {
+  background-color: rgba(255, 255, 255, 0.16);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
