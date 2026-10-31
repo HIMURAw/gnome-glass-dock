@@ -12,6 +12,7 @@ import {setBlurEnabled, snapshotExclude} from './glass.js';
 import {LauncherEntries} from './launcher.js';
 import {GlassMenus} from './menus.js';
 import {spring, stopAllSprings, stopSpring} from './spring.js';
+import {clearSmoke, conceal, reveal, smokeOn} from './motion.js';
 import {ThemedStylesheet} from './theme.js';
 
 // Room above the resting dock for the name label (px).
@@ -400,7 +401,12 @@ export default class GlassDockExtension extends Extension {
         // it shows over one, keep the compositor in the way, as the island does.
         this._keepComposited(!hidden && !!this._autoHide);
         const offset = this._dockHeight + 6;
+        // Smoke (fume theme): the icons blur away as the dock sinks, and come back out of the
+        // blur as it rises.
+        const smoke = smokeOn();
         if (hidden) {
+            if (smoke)
+                conceal(this._dock.row, {duration: 200});
             this._container.ease({
                 translation_y: offset,
                 duration: 240,
@@ -415,6 +421,12 @@ export default class GlassDockExtension extends Extension {
             if (!this._inOverview)
                 this._container.show();
             spring(this._container, {translation_y: 0}, {response: 0.42, damping: 0.74});
+            if (smoke) {
+                reveal(this._dock.row, {delay: 40, duration: 380, rise: 0});
+            } else {
+                clearSmoke(this._dock.row);
+                this._dock.row.opacity = 255;
+            }
         }
     }
 

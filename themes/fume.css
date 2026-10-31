@@ -1,0 +1,64 @@
+/* fume (Smoke): the glassy dashboard Umut liked (2026-11-01). Appended (not recoloured) when the
+   colour theme is fume; rounded like cam. Dark smoked glass, darker at the top and clearing toward
+   the bottom, a warm hairline, white for what is chosen, amber for the one call to action.
+   Generated from cam.css by colour mapping, then tuned; the motion lives in motion.js. */
+
+.gdock-glass-tint {
+  background-gradient-direction: vertical;
+  background-gradient-start: rgba(28, 22, 18, 0.5);
+  background-gradient-end: rgba(28, 22, 18, 0.18);
+  box-shadow: inset 0 1px 0 rgba(255, 236, 214, 0.13);
+}
+
+.gdock-glass-solid {
+  background-gradient-direction: none;
+  background-color: rgba(30, 24, 20, 0.92);
+}
+
+.gdock-glass {
+  -glass-frame-color: rgba(255, 240, 225, 0.1);
+  -glass-radius: 999px;
+}
+
+.gdock-dot {
+  background-color: rgba(246, 241, 234, 0.42);
+}
+
+/* The current app: ink, as the Cam Panel's current dock button. */
+.gdock-dot-focused {
+  width: 14px;
+  background-color: #f6f1ea;
+}
+
+.gdock-separator {
+  background-color: rgba(255, 240, 225, 0.1);
+}
+
+.gdock-show-apps-tile {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #f6f1ea;
+}
+
+.gdock-label {
+  color: #f6f1ea;
+  background-color: rgba(24, 19, 16, 0.78);
+  border: 1px solid rgba(255, 240, 225, 0.1);
+  border-radius: 8px;
+  padding: 5px 10px;
+}
+
+.popup-menu .gdock-glass-menu .popup-menu-item {
+  border-radius: 999px;
+  color: #f6f1ea;
+}
+
+.popup-menu .gdock-glass-menu .popup-menu-item:hover,
+.popup-menu .gdock-glass-menu .popup-menu-item:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.popup-menu .gdock-glass-menu .popup-menu-item:active,
+.popup-menu .gdock-glass-menu .popup-menu-item:checked {
+  background-color: rgba(255, 255, 255, 0.16);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
