@@ -10,6 +10,14 @@ import * as PopupMenu from 'resource:///org/gnome/shell/ui/popupMenu.js';
 import {Glass} from './glass.js';
 import {AppIcon, DockIcon, Separator, ShowAppsIcon, TrashIcon} from './icons.js';
 
+// wl-copy on GNOME opens a 1x1 window for a moment to reach the clipboard; every copy
+// would otherwise pop an icon into the dock and take it out again.
+function isClipboardHelper(app) {
+    const windows = app.get_windows();
+    return windows.length > 0 && windows.every(w =>
+        w.get_wm_class?.() === 'io.github.bugaevc.wl-clipboard' || w.get_title?.() === 'wl-clipboard');
+}
+
 // How fast sizes follow their targets: the time constant of an exponential
 // approach, in seconds. Short enough to feel direct, long enough to be smooth.
 const SCALE_TAU = 0.075;
@@ -203,7 +211,7 @@ export class Dock {
         // Other running apps keep the order they first appeared in.
         this._runningOrder ??= [];
         const running = Shell.AppSystem.get_default().get_running()
-            .filter(a => !favoriteIds.has(a.get_id()))
+            .filter(a => !favoriteIds.has(a.get_id()) && !isClipboardHelper(a))
             .sort((a, b) => this._firstSeen(a) - this._firstSeen(b));
 
         const keys = [];
