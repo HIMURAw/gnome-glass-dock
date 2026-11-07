@@ -326,7 +326,10 @@ export default class GlassDockExtension extends Extension {
         // without F11) is scanned out straight to the display as well, and then the
         // shown dock was not drawn over it (2026-10-13). Keep the compositor in the way
         // whenever it shows over a window; when nothing is under it, let it go.
-        this._keepComposited(on && !this._hidden);
+        // Hidden too: a fully opaque fullscreen window left alone is scanned out past the
+        // shell, and the edge reveal then never showed (2026-11-07, Blur my Shell made the
+        // focused window opaque). Compositing stays on for as long as auto-hide is.
+        this._keepComposited(on);
         if (on && !this._pointerWatch)
             this._pointerWatch = getPointerWatcher().addWatch(100, (x, y) => this._onPointerMove(x, y));
         else if (!on && this._pointerWatch) {
@@ -399,7 +402,7 @@ export default class GlassDockExtension extends Extension {
         // screen, past the shell: the dock drawn over it showed only now and then
         // (whenever something forced a composited frame) and seemed to flicker. While
         // it shows over one, keep the compositor in the way, as the island does.
-        this._keepComposited(!hidden && !!this._autoHide);
+        this._keepComposited(!!this._autoHide);
         const offset = this._dockHeight + 6;
         // Smoke (fume theme): the icons blur away as the dock sinks, and come back out of the
         // blur as it rises.
